@@ -23,6 +23,9 @@
             "Geo\\": "src/Geo/"
         }
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "suggest": {
         "willdurand/geocoder": "~2.8"
     }
