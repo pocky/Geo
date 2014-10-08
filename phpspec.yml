@@ -1,0 +1,4 @@
+suites:
+    geo_suite:
+        namespace: Geo
+        spec_path: ./src/
