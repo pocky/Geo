@@ -35,8 +35,8 @@ $geo->getCoordinates(); // will return "37.42242,-122.08585,0"
 ```
 
 ```php
-Geo\Geo::fromCoordinatesAsString("37.42242, -122.08585, 0")
-    ->getCoordinates(); // will return "37.42242,-122.08585,0"
+Geo\Geo::fromCoordinatesAsString("37.42242,-122.08585,0")
+    ->getLatitude(); // will return "37.42242"
 ```
 
 ```php
@@ -52,13 +52,14 @@ List of available getters:
 - `getLongitude()`
 - `getElevation()`
 - `getCoordinates()`
-- `getCoordiantesAsArray()`
+- `getCoordinatesAsArray()`
 
 __Check if two geo are equals__
 
 - `isEqualTo(Geo $geo)`
 
 __Exception__
+
 If you want to pass 1 or less OR 4 or more arguments, a `Geo\Exception\InvalidCoordinatesException` will be thrown.
 
 License
