@@ -84,7 +84,7 @@ final class Geo
     {
         $number = count($coordinates);
 
-        if ($number < 2) {
+        if ($number < 2 || $number > 3) {
             throw new InvalidCoordinatesException(sprintf("We need 3 or less coordinates! %s given", $number));
         }
 

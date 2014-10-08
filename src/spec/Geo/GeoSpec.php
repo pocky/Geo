@@ -66,26 +66,31 @@ class GeoSpec extends ObjectBehavior
 
     function it_should_create_a_geo_from_string()
     {
-        $geo = $this::fromCoordinatesAsString("38.42242,-122.08585");
-        $geo->getLatitude()->shouldReturn("38.42242");
+        $this::fromCoordinatesAsString("38.42242,-122.08585")
+            ->getLatitude()
+            ->shouldReturn("38.42242");
 
-        $geo = $this::fromCoordinatesAsString("38.42242,-122.08585,20");
-        $geo->getElevation()->shouldReturn("20");
+        $this::fromCoordinatesAsString("38.42242,-122.08585,20")
+            ->getElevation()
+            ->shouldReturn("20");
     }
 
     function it_should_create_a_geo_from_array()
     {
-        $geo = $this::fromCoordinatesAsArray([38.42242, -123.08585]);
-        $geo->getLongitude()->shouldReturn("-123.08585");
+        $this::fromCoordinatesAsArray([38.42242, -123.08585])
+            ->getLongitude()
+            ->shouldReturn("-123.08585");
 
-        $geo = $this::fromCoordinatesAsArray([38.42242, -123.08585, 10]);
-        $geo->getElevation()->shouldReturn("10");
+        $this::fromCoordinatesAsArray([38.42242, -123.08585, 10])
+            ->getElevation()
+            ->shouldReturn("10");
     }
 
     function it_should_throw_an_exception_because_of_too_many_arguments()
     {
-        $geo = $this::fromCoordinatesAsArray([38.42242, -123.08585, 10, 20]);
-        $geo->shouldThrow('Geo\Exception\InvalidCoordinatesException');
+        $this
+            ->shouldThrow('Geo\Exception\InvalidCoordinatesException')
+            ->during('fromCoordinatesAsArray', [[38.42242, -123.08585, 10, 20]]);
 
         $this
             ->shouldThrow('Geo\Exception\InvalidCoordinatesException')

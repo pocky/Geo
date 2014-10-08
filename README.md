@@ -35,11 +35,13 @@ $geo->getCoordinates(); // will return "37.42242,-122.08585,0"
 ```
 
 ```php
-Geo\Geo::fromCoordinatesAsString("37.42242, -122.08585, 0")->getCoordinates(); // will return "37.42242,-122.08585,0"
+Geo\Geo::fromCoordinatesAsString("37.42242, -122.08585, 0")
+    ->getCoordinates(); // will return "37.42242,-122.08585,0"
 ```
 
 ```php
-Geo\Geo::fromCoordinatesAsArray([37.42242, -122.08585, 0])->getCoordinates(); // will return "37.42242,-122.08585,0"
+Geo\Geo::fromCoordinatesAsArray([37.42242, -122.08585, 0])
+    ->getCoordinates(); // will return "37.42242,-122.08585,0"
 ```
 
 __Getter__
