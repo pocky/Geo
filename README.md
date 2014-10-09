@@ -1,5 +1,5 @@
 Geo
-====
+===
 
 PHP 5.4+ library to make working with Geo coordinates safer, easier, and fun!
 
@@ -10,7 +10,7 @@ PHP 5.4+ library to make working with Geo coordinates safer, easier, and fun!
 Installation
 ------------
 
-The recommended way to install User is through [Composer][2]:
+The recommended way to install Geo is through [Composer][2]:
 
 ```json
 {
@@ -32,17 +32,17 @@ Elevation is not required and initialised to 0 if arguments are not provided.
 There are three ways to create a Geo object:
 
 ```php
-$geo = new Geo\Geo(37.42242, -122.08585, 0);
+$geo = new Geo\Coordinates(37.42242, -122.08585, 0);
 $geo->getCoordinates(); // will return "37.42242,-122.08585,0"
 ```
 
 ```php
-Geo\Geo::fromCoordinatesAsString("37.42242,-122.08585,0")
+Geo\Coordinates::fromCoordinatesAsString("37.42242,-122.08585,0")
     ->getLatitude(); // will return "37.42242"
 ```
 
 ```php
-Geo\Geo::fromCoordinatesAsArray([37.42242, -122.08585, 0])
+Geo\Coordinates::fromCoordinatesAsArray([37.42242, -122.08585, 0])
     ->getCoordinates(); // will return "37.42242,-122.08585,0"
 ```
 

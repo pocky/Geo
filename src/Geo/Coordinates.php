@@ -14,13 +14,13 @@ namespace Geo;
 use Geo\Exception\InvalidCoordinatesException;
 
 /**
- * Class Geo
+ * Class Coordinates
  * The geographic coordinates of a place, address or event.
  *
  * @author Alexandre Balmes <alexandre@lablackroom.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
-final class Geo
+final class Coordinates
 {
     /**
      * @var string  The latitude of a location. For example 37.42242.
@@ -136,11 +136,11 @@ final class Geo
     }
 
     /**
-     * @param  Geo  $geo
+     * @param  Coordinates  $coordinates
      * @return bool
      */
-    public function isEqualTo(Geo $geo)
+    public function isEqualTo(Coordinates $coordinates)
     {
-        return $this->getCoordinates() === $geo->getCoordinates();
+        return $this->getCoordinates() === $coordinates->getCoordinates();
     }
 }

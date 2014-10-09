@@ -11,21 +11,21 @@
 
 namespace spec\Geo;
 
-use Geo\Geo as GeoClass;
+use Geo\Coordinates;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
- * Class GeoSpec
+ * Class CoordinatesSpec
  *
  * @author Alexandre Balmes <alexandre@lablackroom.com>
  * @license http://opensource.org/licenses/mit-license.php MIT
  */
-class GeoSpec extends ObjectBehavior
+class CoordinatesSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Geo\Geo');
+        $this->shouldHaveType('Geo\Coordinates');
     }
 
     function let()
@@ -60,8 +60,8 @@ class GeoSpec extends ObjectBehavior
 
     function it_should_be_equal()
     {
-        $geo = new GeoClass(37.42242, -122.08585);
-        $this->isEqualTo($geo)->shouldReturn(true);
+        $coordinates = new Coordinates(37.42242, -122.08585);
+        $this->isEqualTo($coordinates)->shouldReturn(true);
     }
 
     function it_should_create_a_geo_from_string()
