@@ -50,9 +50,9 @@ final class Coordinates
     }
 
     /**
-     * @param  string $coordinates
-     * @param  string $delimiter
-     * @return Geo
+     * @param  string      $coordinates
+     * @param  string      $delimiter
+     * @return Coordinates
      */
     public static function fromCoordinatesAsString($coordinates, $delimiter = ",")
     {
@@ -77,8 +77,8 @@ final class Coordinates
     }
 
     /**
-     * @param  array $coordinates
-     * @return Geo
+     * @param  array       $coordinates
+     * @return Coordinates
      */
     public static function fromCoordinatesAsArray(array $coordinates)
     {
@@ -96,7 +96,7 @@ final class Coordinates
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLatitude()
     {
@@ -104,7 +104,7 @@ final class Coordinates
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLongitude()
     {
@@ -136,7 +136,7 @@ final class Coordinates
     }
 
     /**
-     * @param  Coordinates  $coordinates
+     * @param  Coordinates $coordinates
      * @return bool
      */
     public function isEqualTo(Coordinates $coordinates)

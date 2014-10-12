@@ -13,7 +13,6 @@ namespace spec\Geo;
 
 use Geo\Coordinates;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 /**
  * Class CoordinatesSpec
@@ -23,48 +22,48 @@ use Prophecy\Argument;
  */
 class CoordinatesSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Geo\Coordinates');
     }
 
-    function let()
+    public function let()
     {
         $this->beConstructedWith(37.42242, -122.08585);
     }
 
-    function it_should_return_latitude()
+    public function it_should_return_latitude()
     {
         $this->getLatitude()->shouldReturn("37.42242");
     }
 
-    function it_should_return_longitude()
+    public function it_should_return_longitude()
     {
         $this->getLongitude()->shouldReturn("-122.08585");
     }
 
-    function it_should_return_elevation()
+    public function it_should_return_elevation()
     {
         $this->getElevation()->shouldReturn("0");
     }
 
-    function it_should_return_coordinates_as_string()
+    public function it_should_return_coordinates_as_string()
     {
         $this->getCoordinates()->shouldBeString();
     }
 
-    function it_should_return_coordinates_as_array()
+    public function it_should_return_coordinates_as_array()
     {
         $this->getCoordinatesAsArray()->shouldBeArray();
     }
 
-    function it_should_be_equal()
+    public function it_should_be_equal()
     {
         $coordinates = new Coordinates(37.42242, -122.08585);
         $this->isEqualTo($coordinates)->shouldReturn(true);
     }
 
-    function it_should_create_a_geo_from_string()
+    public function it_should_create_a_geo_from_string()
     {
         $this::fromCoordinatesAsString("38.42242,-122.08585")
             ->getLatitude()
@@ -75,7 +74,7 @@ class CoordinatesSpec extends ObjectBehavior
             ->shouldReturn("20");
     }
 
-    function it_should_create_a_geo_from_array()
+    public function it_should_create_a_geo_from_array()
     {
         $this::fromCoordinatesAsArray([38.42242, -123.08585])
             ->getLongitude()
@@ -86,7 +85,7 @@ class CoordinatesSpec extends ObjectBehavior
             ->shouldReturn("10");
     }
 
-    function it_should_throw_an_exception_because_of_too_many_arguments()
+    public function it_should_throw_an_exception_because_of_too_many_arguments()
     {
         $this
             ->shouldThrow('Geo\Exception\InvalidCoordinatesException')
@@ -101,7 +100,7 @@ class CoordinatesSpec extends ObjectBehavior
             ->during('fromCoordinatesAsString', ["38.42242"]);
     }
 
-    function it_should_throw_an_exception_because_of_not_much_arguments()
+    public function it_should_throw_an_exception_because_of_not_much_arguments()
     {
         $this
             ->shouldThrow('Geo\Exception\InvalidCoordinatesException')
