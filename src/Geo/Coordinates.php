@@ -25,17 +25,17 @@ final class Coordinates
     /**
      * @var string  The latitude of a location. For example 37.42242.
      */
-    protected $latitude;
+    private $latitude;
 
     /**
      * @var string  The longitude of a location. For example -122.08585.
      */
-    protected $longitude;
+    private $longitude;
 
     /**
      * @var string  The elevation of a location.
      */
-    protected $elevation;
+    private $elevation;
 
     /**
      * @param float $latitude
